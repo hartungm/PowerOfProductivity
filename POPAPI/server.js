@@ -8,10 +8,10 @@ mongoose.connect('mongodb://localhost/');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 80;
 
 app.use('/api', require('./app/routes/api'));
 
 app.listen(port);
-console.log("App running on port 8080");
+console.log("App running on port 80");
 
