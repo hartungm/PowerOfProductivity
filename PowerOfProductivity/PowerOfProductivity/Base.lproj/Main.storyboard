@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PowerOfProductivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TaskViewController" customModule="PowerOfProductivity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -38,17 +38,97 @@
                         <barButtonItem key="leftBarButtonItem" title="Track BPT" id="033-cb-J9N"/>
                         <barButtonItem key="rightBarButtonItem" title="Add Task" id="Bx5-mV-5S7">
                             <connections>
-                                <action selector="addTask:" destination="BYZ-38-t0r" id="b4v-9C-pac"/>
+                                <segue destination="fiD-nE-zJ3" kind="show" id="7ea-N0-ZSt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="Bv4-Ez-N3S" id="NLG-7Z-ond"/>
+                        <outlet property="tableView" destination="Bv4-Ez-N3S" id="XGQ-R4-SUQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="429"/>
+        </scene>
+        <!--Create Task View Controller-->
+        <scene sceneID="FTp-OS-hYT">
+            <objects>
+                <viewController id="fiD-nE-zJ3" customClass="CreateTaskViewController" customModule="PowerOfProductivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G4r-ee-TlE"/>
+                        <viewControllerLayoutGuide type="bottom" id="xCm-MQ-cOv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dj2-Ye-Apy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kol-Ov-avH">
+                                <rect key="frame" x="258" y="122" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-UJ-XdC">
+                                <rect key="frame" x="182" y="183" width="237" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6Yw-2x-U0b"/>
+                                    <constraint firstAttribute="width" constant="237" id="x8m-hn-l2g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-9H-lKL">
+                                <rect key="frame" x="182" y="221" width="237" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="gAv-Vl-kuJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="tp2-Ef-DZZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v5g-hU-82g">
+                                <rect key="frame" x="182" y="259" width="237" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="6AE-QU-VkM"/>
+                                    <constraint firstAttribute="height" constant="30" id="wFs-Ce-IXB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kol-Ov-avH" firstAttribute="centerX" secondItem="dj2-Ye-Apy" secondAttribute="centerX" id="74X-5C-AUR"/>
+                            <constraint firstItem="2oG-9H-lKL" firstAttribute="top" secondItem="3Yb-UJ-XdC" secondAttribute="bottom" constant="8" id="9lo-qh-NVy"/>
+                            <constraint firstItem="v5g-hU-82g" firstAttribute="centerX" secondItem="dj2-Ye-Apy" secondAttribute="centerX" id="OQh-tq-5vb"/>
+                            <constraint firstItem="3Yb-UJ-XdC" firstAttribute="centerX" secondItem="dj2-Ye-Apy" secondAttribute="centerX" id="Z3n-HM-tKH"/>
+                            <constraint firstItem="2oG-9H-lKL" firstAttribute="centerX" secondItem="dj2-Ye-Apy" secondAttribute="centerX" id="bDr-oi-Mza"/>
+                            <constraint firstItem="3Yb-UJ-XdC" firstAttribute="top" secondItem="kol-Ov-avH" secondAttribute="bottom" constant="40" id="hwV-CS-HK7"/>
+                            <constraint firstItem="v5g-hU-82g" firstAttribute="top" secondItem="2oG-9H-lKL" secondAttribute="bottom" constant="8" id="n8g-1I-NQd"/>
+                            <constraint firstItem="kol-Ov-avH" firstAttribute="top" secondItem="G4r-ee-TlE" secondAttribute="bottom" constant="58" id="nKE-4I-GIb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BPS-wO-B0g">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="nUT-wt-yLa">
+                            <connections>
+                                <action selector="back:" destination="fiD-nE-zJ3" id="O2I-p2-Jyi"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create Task" id="42f-VU-Ggq">
+                            <connections>
+                                <action selector="createTask:" destination="fiD-nE-zJ3" id="4lX-05-Kxd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="taskComplexity" destination="2oG-9H-lKL" id="TyG-SJ-6JW"/>
+                        <outlet property="taskName" destination="3Yb-UJ-XdC" id="44B-OA-c0T"/>
+                        <outlet property="taskPriority" destination="v5g-hU-82g" id="gcP-rg-Mo3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8s3-Ks-VvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2005" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g2d-2K-U5Q">
